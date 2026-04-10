@@ -23,7 +23,6 @@ def enviar():
     datos = {
         'nombre': request.form['nombre'],
         'rfc': request.form['rfc'],
-        'direccion': request.form['direccion'],
         'correo': request.form['correo'],
         'uso_cfdi': request.form['uso_cfdi'],
         'monto': request.form['monto'],
@@ -41,7 +40,7 @@ def enviar():
     	datos['archivo'] = ''
 
     csv_file = os.path.join(app.config['UPLOAD_FOLDER'], 'solicitudes_factura.csv')
-    headers = ['Nombre', 'RFC','Direccion', 'Correo Electrónico', 'Uso CFDI','Monto','Forma y Método de Pago', 'Fecha de Solicitud','ArchivoSubido']
+    headers = ['Nombre', 'RFC', 'Correo Electrónico', 'Uso CFDI','Monto','Forma y Método de Pago', 'Fecha de Solicitud','ArchivoSubido']
     
     if not os.path.exists(csv_file):
        with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
