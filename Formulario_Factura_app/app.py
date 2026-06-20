@@ -100,11 +100,11 @@ def enviar():
         Método de Pago: {datos['metodo_pago']}
         Archivo: {datos['archivo']}
         """
-        print("🚀 Enviando correo con SendGrid...")
+        print("🚀 Enviando correo con Zoho...")
         mail.send(msg)
-        print("✅ Correo enviado con SendGrid")
+        print("✅ Correo enviado con Zoho")
     except Exception as e:
-        print("❌ Error al enviar correo con SendGrid:", str(e))
-        return f"Error al enviar correo con SendGrid: {str(e)}"
+        print("❌ Error al enviar correo con Zoho:", str(e))
+        return f"Error al enviar correo con Zoho: {str(e)}"
 
     return render_template('confirmacion.html', datos=datos, monto=datos['monto'])
